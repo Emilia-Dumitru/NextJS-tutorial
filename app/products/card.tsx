@@ -1,19 +1,28 @@
-import styles from './card.module.css';
-
-export default function CardProduct() {
+export default function CardProduct({
+    image,
+    price,
+    title,
+    quantity,
+    region,
+}: {
+    image: string;
+    price: string;
+    title: string;
+    quantity: string;
+    region: string;
+}) {
     return (
-        <div className={styles.card}>
+        <div className="border border-gray-300 rounded-lg w-full max-w-[230px] text-left shadow-md bg-white cursor-pointer m-auto p-4">
             <img
-                src="https://i.postimg.cc/WpxMfBZb/beans.png"
-                alt="Product Image"
-                className={styles.image}
+                src={image}
+                alt={title}
+                className="w-full h-[130px] mb-4"
             />
-            <div className={styles.content}>
-                <p className={styles.price}>GH¢ 50</p>
-                <h3 className={styles.title}><strong>Beans</strong></h3>
-                <p className={styles.quantity}>1999 metric tonnes</p>
-                <p className={styles.region}>Afigya-Kwabre</p>
-                <button className={styles.button}>Purchase order</button>
+            <div className="text-[#071437] mx-auto">
+                <p className="mt-2 text-sm">{price}</p>
+                <h3 className="text-lg font-semibold">{title}</h3>
+                <p className="text-sm">{quantity}</p>
+                <p className="text-sm mb-3">{region}</p>
             </div>
         </div>
     );
